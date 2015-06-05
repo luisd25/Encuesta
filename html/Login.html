@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Pagina de Creacion de Encuesta</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="../js/jquery.min.js"></script>
+		<script src="../js/jquery.poptrox.min.js"></script>
+		<script src="../js/skel.min.js"></script>
+		<script src="../js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel-noscript.css" />
+			<link rel="stylesheet" href="css/style.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+		<script>
+		function valida() 
+		{
+			if (document.getElementById("user").value=="") 
+			{
+				alert("llene su usuario");
+			   	return false;
+		   	} 
+			else if(document.getElementById("password").value=="") 
+			{
+				alert("llene su password");
+				return false;
+		   	} 
+			else if(document.getElementById("ask").value=="") 
+			{
+				alert("llene su Pregunta de seguridad");
+				return false;
+			} 
+			
+		}
+			
+	</script>
+	</head>
+	<body>
+
+		<!-- Header -->
+			<header id="header">
+
+				<!-- Logo -->
+					<h1 id="logo"><a href="#">Creacion de Encuesta</a></h1>
+				
+				<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li><a href="regi.html">Registro</a></li>
+							
+						</ul>
+					</nav>
+
+			</header>
+			
+		<!-- Login -->
+			<section id="intro" class="main style dark fullscreen">
+				<div class="content container small">
+					<header>
+						<h2>Inicio de Sesion</h2>
+					</header>
+					
+            <form action="../php/login.php" method="POST" onsubmit="return valida()">
+			 usuario:
+                <input type="text" id="user" name="user">
+                    <br>password:
+                <input type="password" id="password" name="password">
+				<br>Elija una pregunta de seguridad: 
+	<br> <select id="tip">
+   
+<option value="1">Lugar de nacimiento de la madre</option>
+<option value="2">amigo de la infancia</option>
+<option value="3">nombre de su mascota</option>
+</select>
+<br><input type="text" name="ask" id="ask">
+               <br> <input type="submit" class="button"value="iniciar secion">
+            </form>
+					
+				</div>
+			</section>
+	
+
+	</body>
+</html>

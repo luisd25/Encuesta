@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+	
+		<title>Pagina de Creacion de Encuesta</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="../js/jquery.min.js"></script>
+		<script src="../js/jquery.poptrox.min.js"></script>
+		<script src="../js/skel.min.js"></script>
+		<script src="../js/init.js"></script>
+		<script src="../js/valida_regi.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel-noscript.css" />
+			<link rel="stylesheet" href="css/style.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+		<script>
+		function valida() {
+			if (document.getElementById("nombre").value=="") {
+				alert("llene su nombre");
+			   	return false;
+		   	} else if(document.getElementById("apellido").value=="") {
+				alert("llene su apellido");
+				return false;
+		   	} else if(document.getElementById("email").value=="") {
+				alert("llene su email");
+				return false;
+			} else if(document.getElementById("usuario").value=="") {
+				alert("llene el usuario");
+				return false;
+			} else if(document.getElementById("password").value=="") {
+			       	alert("llene su password");
+				return false;
+			}
+			 else if(document.getElementById("ask").value=="") {
+			       	alert("conteste la pregunta de seguridad");
+				return false;
+			}
+			
+		}
+			
+	</script>
+	
+	</head>
+	<body>
+
+		<!-- Header -->
+			<header id="header">
+
+				<!-- Logo -->
+					<h1 id="logo"><a href="#">Creacion de Encuesta</a></h1>
+				
+				<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li><a href="Login.html">Login</a></li>
+						
+						</ul>
+					</nav>
+
+			</header>
+			
+		<!-- Login -->
+			<section id="intro" class="main style1 dark fullscreen">
+				<div class="content container small">
+					<header>
+						<h2>Registro</h2>
+					</header>
+					
+            <form action="../php/libreria.php" method="POST" onSubmit="return valida()">
+			 Nombre:	<input type="text" name="nombre" id="nombre"><br />
+		Apellido: <input type="text" name="apellido" id="apellido"><br />
+		Email: <input type="text" name="email" id="email"><br />
+		Usuario: <input type="text" name="user" id="user"><br />
+		Password: <input type="password" name="password" id="password"><br />
+	 Elija una pregunta de seguridad: 
+	<br> <select id="tip">
+   
+<option value="1">Lugar de nacimiento de la madre</option>
+<option value="2">amigo de la infancia</option>
+<option value="3">nombre de su mascota</option>
+</select>
+<br><input type="text" name="ask" id="ask">
+		<br><input type="submit" class="button"value="Registrarse"><input type="reset"class="button">
+
+             
+            </form>
+				
+				</div>
+			</section>
+	
+
+	</body>
+</html>
